@@ -2,53 +2,40 @@
   "posts": [
     {
       "id": 1,
-      "title": "Testing",
-      "description": "",
-      "date": "6th Jun 2021",
-      "author": "Shafiq Ruslan"
+      "title": "How To Structure Your App In a Way That Scales.",
+      "description": "<div>The best codebases I found myself working on had their folders structured around the features the app provides.<br><br></div><div>Some folks might tell that it is very close to the Domain-Driven Design's principle of <a href=\"https://martinfowler.com/bliki/BoundedContext.html\">bounded contexts</a>.<br><br></div><div>The App We Will Structure<br><br></div><div>Thinking of application as a feature that contains features creates a robust mental model that can be easily mapped to the folder structure of your project.<br><br></div><div>The following example will refer to a Single-Page Application written in JavaScript that consists of the following building blocks:<br><br></div><ul><li>Routes - root components displayed when an URL is used,</li><li>Components - logical units handling state and rendering,</li><li>Queries - functions calling an HTTP API,</li><li>Styles - CSS bound to the specific component they are named after,</li><li>Services - logical units handling overarching problems</li><li><br></li></ul><div>Remember, this pattern can be applied to any programming language, framework, and problem domain.<br><br></div><div>For example, a game could use shaders, prefabs, entities, and systems as its own building blocks instead.<br><br></div><div>My goal here is to present the idea in an easy-to-digest way. For this reason, I'll make a few simplifications when we go through the evolutionary steps.</div>",
+      "date": "4th Jul 2021",
+      "author": "Michał Pietraszko"
     },
     {
       "id": 2,
-      "title": "Testing",
-      "description": "",
-      "date": "6th Jun 2021",
-      "author": "Shafiq Ruslan"
-    },
-    {
-      "id": 3,
-      "title": "Title",
-      "description": "",
-      "date": "6th Jun 2021",
-      "author": "Shafiq Ruslan"
-    },
-    {
-      "id": 4,
-      "title": "Title",
-      "description": "",
-      "date": "6th Jun 2021",
-      "author": "shafiqruslan"
-    },
-    {
-      "id": 5,
-      "title": "Testing",
-      "description": "",
-      "date": "6th Jun 2021",
-      "author": "Shafiq Ruslan"
-    },
-    {
-      "id": 6,
-      "title": "Title",
-      "description": "",
-      "date": "6th Jun 2021",
-      "author": "Shafiq Ruslan"
-    },
-    {
-      "id": 7,
-      "title": "Testing",
-      "description": "Description\n",
-      "date": "6th Jun 2021",
+      "title": "Title 1",
+      "description": "<div>Description 1</div>",
+      "date": "4th Jul 2021",
       "author": "Shafiq Ruslan"
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "id": 1,
+      "date": "4th Jul 2021",
+      "author": "Author",
+      "body": "<div>comment 1</div>",
+      "postId": "2"
+    },
+    {
+      "id": 2,
+      "date": "4th Jul 2021",
+      "author": "Author",
+      "body": "<div>Comment 2</div>",
+      "postId": "2"
+    },
+    {
+      "id": 3,
+      "date": "4th Jul 2021",
+      "author": "Author 3",
+      "body": "<div>Comment 3</div>",
+      "postId": "2"
+    }
+  ]
 }

@@ -9,7 +9,9 @@
           {{ comment.date }}
         </div>
       </div>
-      <div class="my-2">{{ comment.body }}</div>
+      <div class="trix-content">
+        <span v-html="comment.body"></span>
+      </div>
     </div>
   </div>
 </template>

@@ -53,23 +53,6 @@
             class="block text-sm font-medium text-gray-700"
             >Description</label
           >
-          <!-- <textarea
-            v-model="post.description"
-            id="description"
-            rows="5"
-            class="
-              shadow-sm
-              focus:ring-indigo-500
-              focus:border-indigo-500
-              mt-1
-              block
-              w-full
-              text-sm
-              border-gray-300
-              rounded-md
-            "
-            placeholder="Enter your post"
-          ></textarea> -->
           <div class="mt-1">
             <input id="x" type="hidden" v-model="post.description" />
             <trix-editor
@@ -124,6 +107,9 @@ import 'trix'
 import 'trix/dist/trix.css'
 
 export default {
+  mounted() {
+    document.addEventListener('trix-change', this.setTextToTrix) // Listen to the changes on the editor
+  },
   data() {
     return {
       post: {
@@ -146,6 +132,9 @@ export default {
         .catch((err) => {
           console.log(err)
         })
+    },
+    setTextToTrix: function () {
+      this.post.description = document.getElementById('x').value
     },
   },
 }

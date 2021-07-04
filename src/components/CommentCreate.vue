@@ -22,23 +22,28 @@
             placeholder="Enter your author"
           />
         </div>
-        <textarea
-          v-model="comment.body"
-          id="comment"
-          rows="5"
-          class="
-            shadow-sm
-            focus:ring-indigo-500
-            focus:border-indigo-500
-            mt-1
-            block
-            w-full
-            text-sm
-            border-gray-300
-            rounded-md
-          "
-          placeholder="Enter your comment"
-        ></textarea>
+        <div class="my-4">
+          <div class="mt-1">
+            <input id="x" type="hidden" v-model="comment.body" />
+            <trix-editor
+              input="x"
+              class="
+                trix-content
+                bg-white
+                shadow-sm
+                focus:ring-indigo-500
+                focus:border-indigo-500
+                mt-1
+                block
+                w-full
+                text-sm
+                border-gray-300
+                rounded-md
+              "
+              placeholder="Enter your comment"
+            ></trix-editor>
+          </div>
+        </div>
       </div>
       <div class="mt-6">
         <button
@@ -70,6 +75,9 @@ import Api from '@/services/Api.js'
 import moment from 'moment'
 
 export default {
+  mounted() {
+    document.addEventListener('trix-change', this.setTextToTrix) // Listen to the changes on the editor
+  },
   data() {
     return {
       comment: {
@@ -91,6 +99,9 @@ export default {
         .catch((err) => {
           console.log(err)
         })
+    },
+    setTextToTrix: function () {
+      this.comment.body = document.getElementById('x').value
     },
   },
 }
